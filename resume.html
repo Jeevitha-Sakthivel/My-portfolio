@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeevitha S - Official Resume | AI & ML Engineer</title>
+
+  <!-- Google Fonts: EB Garamond for authentic LaTeX / Academic Resume look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #000000;
+      --text: #111111;
+      --text-muted: #333333;
+      --border-color: #000000;
+      --bg-screen: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'EB Garamond', 'Times New Roman', Times, Georgia, serif;
+      background: var(--bg-screen);
+      color: var(--text);
+      line-height: 1.35;
+      padding-bottom: 50px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Floating Action Bar (Screen Only) */
+    .action-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .brand-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-title span {
+      color: #38bdf8;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-back {
+      background: rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    .btn-print {
+      background: #38bdf8;
+      color: #0b0f19;
+    }
+
+    .btn-print:hover {
+      background: #7dd3fc;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Resume Paper Container */
+    .resume-wrapper {
+      max-width: 820px;
+      margin: 32px auto;
+      background: #ffffff;
+      padding: 42px 48px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      color: #000000;
+    }
+
+    /* Header */
+    .resume-header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .resume-name {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: #000000;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      line-height: 1.15;
+    }
+
+    .contact-line {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13.5px;
+      color: #000000;
+    }
+
+    .contact-line a,
+    .contact-line span {
+      color: #000000;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-line i {
+      font-size: 13px;
+      color: #000000;
+    }
+
+    /* Section Styles */
+    .resume-section {
+      margin-top: 13px;
+    }
+
+    .section-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #000000;
+      border-bottom: 1.5px solid #000000;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    /* Summary Paragraph */
+    .summary-text {
+      font-size: 13px;
+      line-height: 1.42;
+      color: #000000;
+      text-align: justify;
+    }
+
+    /* Skills Layout */
+    .skills-block {
+      font-size: 13px;
+      line-height: 1.38;
+      color: #000000;
+    }
+
+    .skill-category-title {
+      font-weight: 700;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+
+    .skill-row {
+      margin-bottom: 2px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+    }
+
+    .soft-skills-block {
+      margin-top: 5px;
+    }
+
+    /* Projects Section */
+    .project-item {
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+
+    .resume-bullets {
+      list-style-type: disc;
+      margin-left: 19px;
+      font-size: 13px;
+      color: #000000;
+      line-height: 1.38;
+    }
+
+    .resume-bullets li {
+      margin-bottom: 2px;
+    }
+
+    /* Professional Experience */
+    .exp-item {
+      margin-bottom: 8px;
+    }
+
+    .exp-title {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #000000;
+    }
+
+    .exp-subtitle {
+      font-style: italic;
+      font-size: 13px;
+      color: #000000;
+      margin-bottom: 3px;
+    }
+
+    /* Education */
+    .edu-entry {
+      margin-bottom: 7px;
+    }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .edu-date {
+      font-weight: 400;
+      text-align: right;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    .edu-inst-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+    }
+
+    .edu-institution {
+      font-style: italic;
+      color: #000000;
+    }
+
+    .edu-institution a {
+      color: #000000;
+      text-decoration: none;
+      margin-left: 4px;
+      font-size: 11px;
+    }
+
+    .edu-location {
+      font-style: normal;
+      text-align: right;
+      color: #000000;
+      white-space: nowrap;
+    }
+
+    /* Certificates List */
+    .cert-list {
+      list-style-type: disc;
+      margin-left: 19px;
+      font-size: 13px;
+      color: #000000;
+      line-height: 1.4;
+    }
+
+    .cert-list li {
+      margin-bottom: 2px;
+    }
+
+    /* Print Stylesheet (Single-page A4 PDF output) */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        font-size: 10.5pt;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 10mm 14mm 10mm 14mm;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+
+      .resume-section {
+        margin-top: 11px;
+      }
+
+      .section-title {
+        border-bottom: 1.5px solid #000000 !important;
+      }
+    }
+
+    /* Responsive styling for small mobile screens */
+    @media (max-width: 680px) {
+      .resume-wrapper {
+        padding: 24px 20px;
+        margin: 15px auto;
+      }
+
+      .resume-name {
+        font-size: 24px;
+      }
+
+      .contact-line {
+        gap: 10px;
+        font-size: 12.5px;
+      }
+
+      .edu-row,
+      .edu-inst-row {
+        flex-direction: column;
+      }
+
+      .edu-date,
+      .edu-location {
+        text-align: left;
+        margin-top: 1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Action Bar (Screen preview only) -->
+  <div class="action-bar">
+    <div class="brand-title">
+      <i class="fas fa-file-alt"></i> <span>JEEVITHA S</span> &bull; Official Resume
+    </div>
+    <div class="btn-group">
+      <a href="index.html" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+      <button class="btn btn-print" onclick="window.print()">
+        <i class="fas fa-print"></i> Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Resume Document -->
+  <div class="resume-wrapper">
+
+    <!-- Header -->
+    <header class="resume-header">
+      <h1 class="resume-name">JEEVITHA S</h1>
+      <div class="contact-line">
+        <a href="mailto:kayaljeevitha43@gmail.com"><i class="fas fa-envelope"></i> kayaljeevitha43@gmail.com</a>
+        <a href="tel:+916369660084"><i class="fas fa-phone-alt"></i> 6369660084</a>
+        <span><i class="fas fa-map-marker-alt"></i> Tiruvannamalai</span>
+        <a href="https://www.linkedin.com/in/jeevitha-sakthivel-6a48b7306" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="resume-section">
+      <h2 class="section-title">SUMMARY</h2>
+      <p class="summary-text">
+        Final-year B.E. CSE (Artificial Intelligence &amp; Machine Learning) student with hands-on experience in Python, AI/ML, Generative AI, and full-stack web development. Proficient in HTML, CSS, JavaScript, Flask, MERN Stack, Git, GitHub, and VS Code, with experience building practical AI and web applications. Strong in problem-solving, software development, and applying technology to real-world challenges. Seeking an entry-level role in Software Development, AI/ML, or Full Stack Development.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section">
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills-block">
+        <div class="skill-category-title">TECHNICAL SKILLS:</div>
+        <div class="skill-row"><span class="skill-label">Programming:</span> Python, JavaScript, SQL</div>
+        <div class="skill-row"><span class="skill-label">Frontend:</span> HTML5, CSS3, JavaScript, React.js</div>
+        <div class="skill-row"><span class="skill-label">Backend:</span> Node.js, Express.js, Flask</div>
+        <div class="skill-row"><span class="skill-label">Database:</span> MongoDB, MySQL</div>
+        <div class="skill-row"><span class="skill-label">AI / ML:</span> Artificial Intelligence, Machine Learning, Generative AI, Data Analysis</div>
+        <div class="skill-row"><span class="skill-label">Core Concepts:</span> OOP, DBMS, Data Structures &amp; Algorithms</div>
+        <div class="skill-row"><span class="skill-label">Tools &amp; Platforms:</span> Git, GitHub, VS Code, Figma, Power BI</div>
+
+        <div class="soft-skills-block">
+          <div class="skill-category-title">SOFT SKILLS:</div>
+          <div>Problem Solving | Communication | Teamwork | Leadership | Adaptability | Quick Learning</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section">
+      <h2 class="section-title">PROJECTS</h2>
+
+      <!-- Project 1 -->
+      <div class="project-item">
+        <div class="project-title">AI-Powered Syllabus &amp; Study Material Assistant</div>
+        <ul class="resume-bullets">
+          <li>Developed an AI-powered application to organize syllabus content and study materials into structured, subject-wise resources.</li>
+          <li>Technologies: Flutter, Dart, AI/ML</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-item">
+        <div class="project-title">GenAI-Powered Study Assistant with Voice Interaction</div>
+        <ul class="resume-bullets">
+          <li>Developed a Generative AI study assistant using Python and Groq API with chatbot, summarization, and voice-input features.</li>
+          <li>Technologies: Python, Groq API, AI/ML, Voice Interaction</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="resume-section">
+      <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+      <div class="exp-item">
+        <div class="exp-title">Generative AI Intern</div>
+        <div class="exp-subtitle">Adroit Technologies | Online Internship | June 2026</div>
+        <ul class="resume-bullets">
+          <li>Gained hands-on exposure to Generative AI concepts, technologies, and practical applications through a 2-week internship.</li>
+          <li>Explored real-world Generative AI use cases and strengthened practical understanding of AI-driven solutions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-title">EDUCATION</h2>
+
+      <!-- Education Entry 1 -->
+      <div class="edu-entry">
+        <div class="edu-row">
+          <span class="edu-degree">B.E. Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning)</span>
+          <span class="edu-date">09/2023 – Present</span>
+        </div>
+        <div class="edu-inst-row">
+          <span class="edu-institution">Arunai Engineering College, Tiruvannamalai <a href="https://arunai.edu.in" target="_blank" rel="noopener noreferrer" title="Arunai Engineering College"><i class="fas fa-link"></i></a></span>
+          <span class="edu-location">Tiruvannamalai</span>
+        </div>
+      </div>
+
+      <!-- Education Entry 2 -->
+      <div class="edu-entry">
+        <div class="edu-row">
+          <span class="edu-degree">Higher Secondary Certificate (HSC) — 12th</span>
+          <span class="edu-date">2023</span>
+        </div>
+        <div class="edu-inst-row">
+          <span class="edu-institution">Government Higher Secondary School, Tiruvannamalai</span>
+          <span class="edu-location">Tiruvannamalai</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates -->
+    <section class="resume-section">
+      <h2 class="section-title">CERTIFICATES</h2>
+      <ul class="cert-list">
+        <li>SQL &amp; Relational Databases 101 – Cognitive Class</li>
+        <li>Power BI Beginner – SkillUp</li>
+        <li>Watson Services – Rapid Development for AI – IBM</li>
+        <li>Career Edge – Young Professional – TCS iON</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+
+</html>

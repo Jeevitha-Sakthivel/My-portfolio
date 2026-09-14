@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeevitha Sakthivel | AI & ML Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+  <!-- Neural Network Particle Canvas Background -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="portfolio-navbar" id="mainNavbar">
+    <div class="nav-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="nav-brand" aria-label="Jeevitha Sakthivel - Portfolio Home">
+        <div class="brand-logo-icon">
+          <i class="fas fa-brain"></i>
+          <span class="logo-glow-ring"></span>
+        </div>
+        <div class="brand-text">
+          <h2 class="brand-name">Jeevitha.S<span>.</span></h2>
+          <span class="brand-badge">AI / ML Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link-item active"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#about" class="nav-link-item"><i class="fas fa-user"></i><span>About</span></a></li>
+        <li><a href="#skills" class="nav-link-item"><i class="fas fa-layer-group"></i><span>Skills</span></a></li>
+        <li><a href="#lab" class="nav-link-item"><i class="fas fa-terminal"></i><span>AI Lab</span><span class="nav-live-pill">Live</span></a></li>
+        <li><a href="#projects" class="nav-link-item"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+        <li><a href="#experience" class="nav-link-item"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+
+        <!-- Explore Dropdown for secondary sections -->
+        <li class="nav-dropdown" id="navDropdown">
+          <button class="nav-dropdown-btn" id="navDropdownBtn" aria-expanded="false" aria-haspopup="true">
+            <span>Explore</span>
+            <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a href="#services" class="dropdown-item">
+              <i class="fas fa-cogs"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">Services</span>
+                <span class="dropdown-sub">AI/ML &amp; Web Development</span>
+              </div>
+            </a>
+            <a href="#certifications" class="dropdown-item">
+              <i class="fas fa-certificate"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">Certifications</span>
+                <span class="dropdown-sub">IBM, Coursera &amp; HP Honors</span>
+              </div>
+            </a>
+            <a href="#achievements" class="dropdown-item">
+              <i class="fas fa-trophy"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">Achievements</span>
+                <span class="dropdown-sub">Symposiums &amp; Presentations</span>
+              </div>
+            </a>
+            <a href="#education" class="dropdown-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">Education</span>
+                <span class="dropdown-sub">Arunai Engg (8.8 CGPA)</span>
+              </div>
+            </a>
+            <a href="#faq" class="dropdown-item">
+              <i class="fas fa-circle-question"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">FAQ</span>
+                <span class="dropdown-sub">Hiring, Relocation &amp; Roles</span>
+              </div>
+            </a>
+            <a href="resume.html" target="_blank" class="dropdown-item dropdown-resume-item">
+              <i class="fas fa-file-pdf"></i>
+              <div class="dropdown-item-text">
+                <span class="dropdown-title">View Official Resume</span>
+                <span class="dropdown-sub">ATS Verified Format</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="#contact" class="nav-link-item nav-contact-btn"><i class="fas fa-paper-plane"></i><span>Contact</span></a></li>
+      </ul>
+
+      <!-- Right Tools: Search Pill + Sound Button + Theme Palette + Mobile Hamburger -->
+      <div class="nav-right-tools">
+        <button class="nav-cmd-pill" id="cmdPaletteBtn" title="Search or press Ctrl + K" aria-label="Search Portfolio">
+          <i class="fas fa-search"></i>
+          <span class="cmd-text">Search</span>
+          <kbd class="cmd-kbd">Ctrl K</kbd>
+        </button>
+
+        <!-- Theme Accent Palette Picker -->
+        <div class="theme-picker-wrapper" id="themePickerWrapper">
+          <button class="nav-icon-btn" id="themePaletteBtn" title="Customize Accent Theme Color" aria-label="Theme Color Palette" aria-expanded="false" aria-haspopup="true">
+            <i class="fas fa-palette"></i>
+            <span class="theme-active-dot" id="themeActiveDot"></span>
+          </button>
+          <div class="theme-palette-dropdown" id="themePaletteDropdown">
+            <div class="theme-dropdown-header">
+              <span>Accent Theme</span>
+              <span class="theme-badge-live">Live</span>
+            </div>
+            <div class="theme-swatches-grid">
+              <button class="theme-swatch-btn active" data-theme="cyan" title="Electric Cyan (Default)">
+                <span class="swatch-color" style="background: #38bdf8;"></span>
+                <span class="swatch-name">Cyan</span>
+              </button>
+              <button class="theme-swatch-btn" data-theme="neon" title="Cyberpunk Neon (Pink & Violet)">
+                <span class="swatch-color" style="background: #f472b6;"></span>
+                <span class="swatch-name">Neon</span>
+              </button>
+              <button class="theme-swatch-btn" data-theme="emerald" title="Matrix Emerald (Hacker Green)">
+                <span class="swatch-color" style="background: #10b981;"></span>
+                <span class="swatch-name">Emerald</span>
+              </button>
+              <button class="theme-swatch-btn" data-theme="amber" title="Sunset Gold (Solar Amber)">
+                <span class="swatch-color" style="background: #f59e0b;"></span>
+                <span class="swatch-name">Amber</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-icon-btn" id="soundToggle" title="Toggle Futuristic Sound Effects" aria-label="Toggle Sound Effects">
+          <i class="fas fa-volume-mute" id="soundIcon"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar bar-1"></span>
+          <span class="hamburger-bar bar-2"></span>
+          <span class="hamburger-bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay & Sliding Panel -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="drawer-logo-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div>
+          <h3>Jeevitha.S</h3>
+          <div class="drawer-status-pill">
+            <span class="status-pulse-dot"></span>
+            <span>Available for Opportunities</span>
+          </div>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Quick Search in Mobile Drawer -->
+    <div class="drawer-search-wrap">
+      <button class="drawer-search-btn" id="drawerSearchTrigger" aria-label="Quick Search">
+        <i class="fas fa-search"></i>
+        <span>Search sections, skills, AI lab...</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Links with Icons -->
+    <div class="drawer-nav-scroll">
+      <div class="drawer-nav-group">
+        <span class="drawer-group-label">Core Navigation</span>
+        <a href="#home" class="drawer-nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#about" class="drawer-nav-link"><i class="fas fa-user"></i><span>About Me</span></a>
+        <a href="#skills" class="drawer-nav-link"><i class="fas fa-layer-group"></i><span>Skills Arsenal</span></a>
+        <a href="#lab" class="drawer-nav-link"><i class="fas fa-terminal"></i><span>AI Code &amp; Simulation Lab</span><span class="nav-live-pill">Live</span></a>
+        <a href="#projects" class="drawer-nav-link"><i class="fas fa-laptop-code"></i><span>Featured Projects</span></a>
+        <a href="#services" class="drawer-nav-link"><i class="fas fa-cogs"></i><span>Services &amp; Capabilities</span></a>
+      </div>
+
+      <div class="drawer-nav-group">
+        <span class="drawer-group-label">Background &amp; Credentials</span>
+        <a href="#experience" class="drawer-nav-link"><i class="fas fa-briefcase"></i><span>Experience &amp; Leadership</span></a>
+        <a href="#certifications" class="drawer-nav-link"><i class="fas fa-certificate"></i><span>Certifications</span></a>
+        <a href="#achievements" class="drawer-nav-link"><i class="fas fa-trophy"></i><span>Achievements</span></a>
+        <a href="#education" class="drawer-nav-link"><i class="fas fa-graduation-cap"></i><span>Education (8.8 CGPA)</span></a>
+        <a href="#faq" class="drawer-nav-link"><i class="fas fa-circle-question"></i><span>Frequently Asked Questions</span></a>
+        <a href="#contact" class="drawer-nav-link drawer-highlight-link"><i class="fas fa-paper-plane"></i><span>Get in Touch &amp; Hire</span></a>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <!-- Drawer Theme Accent Selector -->
+      <div class="drawer-theme-strip">
+        <span class="drawer-theme-label"><i class="fas fa-palette"></i> Accent:</span>
+        <div class="drawer-swatches">
+          <button class="theme-swatch-btn active" data-theme="cyan" title="Electric Cyan" aria-label="Cyan theme"></button>
+          <button class="theme-swatch-btn" data-theme="neon" title="Cyberpunk Neon" aria-label="Neon theme"></button>
+          <button class="theme-swatch-btn" data-theme="emerald" title="Matrix Emerald" aria-label="Emerald theme"></button>
+          <button class="theme-swatch-btn" data-theme="amber" title="Sunset Gold" aria-label="Amber theme"></button>
+        </div>
+      </div>
+
+      <a href="resume.html" target="_blank" class="drawer-resume-cta">
+        <i class="fas fa-file-pdf"></i>
+        <span>View ATS Resume</span>
+      </a>
+      <div class="drawer-social-icons">
+        <a href="https://linkedin.com/in/jeevitha-sakthivel-ai" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/kayaljeevitha" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:kayaljeevitha43@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+916369660084" title="Call" aria-label="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Home / Hero Section -->
+  <section id="home">
+    <div class="profile-container">
+      <div class="profile-pulse-wave"></div>
+      <div class="profile-glow-ring"></div>
+      <div class="profile-glow-ring-outer"></div>
+      <div class="profile-img-wrapper">
+        <img src="jeevi.jpeg" alt="Jeevitha Sakthivel" class="profile-img"
+          onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80'">
+        <div class="profile-shine"></div>
+      </div>
+
+      <!-- Floating Interactive Badges -->
+      <div class="floating-badge badge-ai">
+        <i class="fas fa-brain"></i> AI &amp; ML
+      </div>
+      <div class="floating-badge badge-python">
+        <i class="fab fa-python"></i> Python
+      </div>
+      <div class="floating-badge badge-html">
+        <i class="fab fa-html5"></i> HTML5
+      </div>
+      <div class="floating-badge badge-css">
+        <i class="fab fa-css3-alt"></i> CSS3
+      </div>
+      <div class="floating-badge badge-cgpa">
+        <i class="fas fa-star"></i> 8.8 CGPA
+      </div>
+    </div>
+
+    <!-- Interactive Hero Status Badge (100% Responsive) -->
+    <a href="#contact" class="hero-status-pill" title="Click to get in touch directly">
+      <span class="status-pill-head">
+        <span class="status-dot-pulse">
+          <span class="pulse-ring"></span>
+          <span class="pulse-dot"></span>
+        </span>
+        <span class="status-badge-tag">Open to Opportunities</span>
+      </span>
+      <span class="status-badge-divider"></span>
+      <span class="status-badge-role">
+        <span class="role-part">AI/ML Student</span>
+        <span class="role-pipe">|</span>
+        <span class="role-part">Building Real-World AI &amp; Software Solutions</span>
+        <span class="role-pipe">|</span>
+        <span class="role-part">2027</span>
+      </span>
+      <i class="fas fa-chevron-right status-badge-arrow"></i>
+    </a>
+
+    <h1>Hi, I'm <span class="shimmer-text">Jeevitha Sakthivel</span></h1>
+    <h3>I am a <span class="typing"></span></h3>
+
+    <h2>Final-Year B.E. CSE (AI &amp; ML) &bull; Software &amp; AI/ML Engineer</h2>
+
+    <p>
+      Final-year B.E. CSE (Artificial Intelligence &amp; Machine Learning) student at Arunai Engineering College with a strong foundation in Python, AI/ML, and Full-Stack Web Development. Hands-on experience with HTML5, CSS3, JavaScript, React.js, Node.js, Express.js, Flask, MERN Stack, and Generative AI through practical projects. Seeking an entry-level role in Software Development, AI/ML, or Full-Stack Development.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-shine">
+        <i class="fas fa-laptop-code"></i> View My Projects
+      </a>
+      <a href="resume.html" target="_blank" class="btn btn-outline btn-shine" title="View & Print Official Resume">
+        <i class="fas fa-file-alt"></i> View Resume
+      </a>
+      <a href="#contact" class="btn btn-contact btn-shine">
+        <i class="fas fa-paper-plane"></i> Get In Touch
+      </a>
+    </div>
+
+    <!-- Hero Quick Action Bar -->
+    <div class="hero-quick-bar">
+      <button class="quick-copy-badge" data-copy="kayaljeevitha43@gmail.com" title="Click to copy email address">
+        <i class="far fa-copy"></i>
+        <span class="copy-text">kayaljeevitha43@gmail.com</span>
+        <span class="copy-hint">Copy</span>
+      </button>
+      <a href="tel:+916369660084" class="hero-social-pill" title="Call Jeevitha">
+        <i class="fas fa-phone-alt"></i> <span>+91 6369660084</span>
+      </a>
+      <button class="hero-social-pill voice-welcome-btn" id="heroVoiceWelcomeBtn" title="Play Sweet Voice Greeting">
+        <i class="fas fa-volume-high voice-icon" id="heroVoiceIcon"></i>
+        <span>Welcome Voice</span>
+        <span class="voice-anim-bars" id="heroVoiceBars">
+          <span></span><span></span><span></span><span></span>
+        </span>
+      </button>
+      <div class="hero-social-links">
+        <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="hero-social-pill" title="GitHub Profile">
+          <i class="fab fa-github"></i> <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/jeevitha-sakthivel-6a48b7306" target="_blank" rel="noopener noreferrer" class="hero-social-pill" title="LinkedIn Profile">
+          <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-user-astronaut"></i> Biography &amp; Vision</span>
+    </div>
+    <h2>About <span>Me</span></h2>
+    <p class="section-subtitle">Learning AI. Building software. Solving real problems.</p>
+
+    <div class="about-card tilt-card">
+      <div class="card-glare"></div>
+      
+      <div class="about-bio">
+        <p>
+          Hello! I’m <strong>Jeevitha S.</strong>, a final-year <strong>B.E. Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning)</strong> student at <strong>Arunai Engineering College, Tiruvannamalai, Tamil Nadu</strong>.
+        </p>
+        <p>
+          I’m passionate about building <strong>AI-powered and software-driven solutions</strong> that address real-world problems. My learning journey has given me hands-on exposure to <strong>Python, Machine Learning, Generative AI, Computer Vision, and Full-Stack Web Development</strong>, with a strong focus on turning concepts into practical applications.
+        </p>
+        <p>
+          I have worked on projects involving <strong>Generative AI, LLM-based applications, Computer Vision, intelligent automation, and responsive web applications</strong>. Through these projects and internships, I have developed an interest in designing solutions that are not only technically functional but also <strong>useful, scalable, and user-focused</strong>.
+        </p>
+      </div>
+
+      <!-- What I Bring -->
+      <div class="about-section-block">
+        <h3 class="about-block-title">
+          <i class="fas fa-layer-group"></i> What I Bring
+        </h3>
+        <div class="highlights-grid">
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Strong programming foundation</strong> in Python, JavaScript, and SQL, with knowledge of OOP, DBMS, Data Structures &amp; Algorithms.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Practical AI &amp; ML experience</strong> with Artificial Intelligence, Machine Learning, Computer Vision, and Data Analysis.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Generative AI &amp; LLM applications</strong> built using Groq API, Google Gemini API, and conversational voice interfaces.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Full-Stack &amp; MERN development</strong> with hands-on experience in HTML5, CSS3, JavaScript, React.js, Node.js, Express.js, and Flask.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Database management</strong> utilizing MongoDB (NoSQL) and MySQL (Relational DB) for structured application storage.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Developer tools &amp; workflows</strong> with Git, GitHub, VS Code, Figma, and Power BI.</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span><strong>Key professional strengths</strong>: Problem Solving, Clear Communication, Teamwork, Leadership, Adaptability, and Quick Learning.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Goal -->
+      <div class="career-goal-box">
+        <div class="career-goal-header">
+          <div class="career-goal-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="career-goal-title">Career Goal</h3>
+        </div>
+        <p class="career-goal-text">
+          Seeking an <strong>entry-level role in Software Development, AI/ML, or Full Stack Development</strong>, where I can apply my engineering skills, build reliable software solutions, collaborate with experienced teams, and contribute to impactful technology products.
+        </p>
+      </div>
+
+      <!-- Animated Stats Counters -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-icon-wrap"><i class="fas fa-star"></i></div>
+          <div class="stat-number"><span class="counter" data-target="8.8" data-decimal="1">0.0</span></div>
+          <div class="stat-label">College CGPA</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+          <div class="stat-number"><span class="counter" data-target="6" data-suffix="+">0</span></div>
+          <div class="stat-label">Featured Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon-wrap"><i class="fas fa-certificate"></i></div>
+          <div class="stat-number"><span class="counter" data-target="8" data-suffix="+">0</span></div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon-wrap"><i class="fas fa-brain"></i></div>
+          <div class="stat-number"><span class="counter" data-target="9" data-suffix="+">0</span></div>
+          <div class="stat-label">Core Tech Skills</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Areas of Expertise Section -->
+  <section id="services">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-cubes"></i> Core Specializations</span>
+    </div>
+    <h2>Areas of <span>Expertise</span></h2>
+    <p class="section-subtitle">What I specialize in and bring to engineering teams</p>
+
+    <div class="services-grid">
+      <div class="service-card tilt-card">
+        <div class="service-icon"><i class="fas fa-brain"></i></div>
+        <h3>Artificial Intelligence &amp; ML</h3>
+        <p>
+          Developing supervised and unsupervised machine learning models, regression,
+          classification, and clustering algorithms using Python and Scikit-Learn to extract actionable insights from
+          data.
+        </p>
+        <div class="service-tags">
+          <span>Python</span>
+          <span>Scikit-Learn</span>
+          <span>Pandas</span>
+          <span>Supervised ML</span>
+          <span>Clustering</span>
+        </div>
+      </div>
+
+      <div class="service-card tilt-card">
+        <div class="service-icon"><i class="fas fa-eye"></i></div>
+        <h3>Computer Vision</h3>
+        <p>
+          Building real-time image processing, body pose estimation, gesture recognition,
+          and object tracking systems with OpenCV, MediaPipe, and deep learning techniques.
+        </p>
+        <div class="service-tags">
+          <span>OpenCV</span>
+          <span>MediaPipe</span>
+          <span>Pose Estimation</span>
+          <span>NumPy</span>
+          <span>Image Processing</span>
+        </div>
+      </div>
+
+      <div class="service-card tilt-card">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h3>Generative AI &amp; LLMs</h3>
+        <p>
+          Engineering intelligent agent workflows, prompt optimization, conversational assistants,
+          and multi-agent collaboration powered by modern LLMs and the Google Gemini API.
+        </p>
+        <div class="service-tags">
+          <span>Gemini API</span>
+          <span>Multi-Agent</span>
+          <span>Prompt Engineering</span>
+          <span>LLMs</span>
+          <span>NLP</span>
+        </div>
+      </div>
+
+      <div class="service-card tilt-card">
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Full-Stack Web Development</h3>
+        <p>
+          Crafting responsive frontends with HTML5, CSS3, and JavaScript, paired with
+          lightweight Python Flask backends, RESTful APIs, and database integrations.
+        </p>
+        <div class="service-tags">
+          <span>HTML5/CSS3</span>
+          <span>JavaScript</span>
+          <span>Python Flask</span>
+          <span>REST APIs</span>
+          <span>MongoDB/SQL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Leadership Section -->
+  <section id="experience">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-briefcase"></i> Experience &amp; Leadership</span>
+    </div>
+    <h2>Experience &amp; <span>Leadership</span></h2>
+    <p class="section-subtitle">Hands-on experience through internships, real-world AI applications, and technical projects.</p>
+
+    <div class="experience-timeline">
+      <!-- Role 1: Generative AI Intern -->
+      <div class="exp-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="exp-icon"><i class="fas fa-brain"></i></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-title-row">
+              <h3>Generative AI Intern</h3>
+              <span class="exp-type-badge internship"><i class="fas fa-laptop-code"></i> AI Internship</span>
+            </div>
+            <h4>Adroit Technologies</h4>
+          </div>
+          <span class="exp-period"><i class="far fa-calendar-alt"></i> June 2026 &bull; 2 Weeks</span>
+        </div>
+        <p class="exp-desc">
+          Gained practical exposure to <strong>Generative AI concepts, Large Language Models (LLMs), prompt engineering, AI-powered applications, and real-world use cases</strong>.
+        </p>
+        <ul class="exp-bullets">
+          <li><i class="fas fa-arrow-right"></i> Worked with AI tools and explored how generative models can be applied to <strong>content generation, conversational assistants, information retrieval, and workflow automation</strong>.</li>
+          <li><i class="fas fa-arrow-right"></i> Developed an understanding of <strong>AI concepts, model interaction, prompt optimization, and integrating AI capabilities into practical software solutions</strong> through hands-on tasks and project-based learning.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Generative AI</span>
+          <span>LLMs</span>
+          <span>Prompt Engineering</span>
+          <span>Workflow Automation</span>
+          <span>AI Integration</span>
+        </div>
+      </div>
+
+      <!-- Role 2 -->
+      <div class="exp-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="exp-icon"><i class="fas fa-users-cog"></i></div>
+        <div class="exp-header">
+          <div>
+            <div class="exp-title-row">
+              <h3>Student Technical Coordinator</h3>
+              <span class="exp-type-badge leadership"><i class="fas fa-users"></i> Department Leadership</span>
+            </div>
+            <h4>Department of AI &amp; ML &bull; Arunai Engineering College</h4>
+          </div>
+          <span class="exp-period"><i class="far fa-calendar-alt"></i> Aug 2023 – Present</span>
+        </div>
+        <p class="exp-desc">
+          Organizing technical symposiums, hands-on coding bootcamps, and mentorship sessions for students in the
+          Department of Artificial Intelligence &amp; Machine Learning.
+        </p>
+        <ul class="exp-bullets">
+          <li><i class="fas fa-arrow-right"></i> Conducted practical training sessions on Python programming and
+            Git/GitHub version control for 100+ peers.</li>
+          <li><i class="fas fa-arrow-right"></i> Coordinated technical events, code-debugging contests, and project
+            presentations for the annual national symposium.</li>
+          <li><i class="fas fa-arrow-right"></i> Liaised between faculty members and student project teams to streamline
+            capstone milestone reviews.</li>
+        </ul>
+        <div class="exp-tags">
+          <span>Leadership</span>
+          <span>Technical Mentorship</span>
+          <span>Git/GitHub</span>
+          <span>Event Management</span>
+          <span>Public Speaking</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-layer-group"></i> Technical Arsenal</span>
+    </div>
+    <h2>My <span>Skills</span></h2>
+    <p class="section-subtitle">Technical proficiency across languages, frameworks, and databases</p>
+
+    <!-- Recruiter Lens & Interactive ATS Role Matcher -->
+    <div class="recruiter-lens-card tilt-card" id="recruiterLens">
+      <div class="card-glare"></div>
+      <div class="lens-header-row">
+        <div class="lens-title-group">
+          <span class="lens-badge"><i class="fas fa-bullseye"></i> Recruiter Lens &bull; ATS Role Matcher</span>
+          <h3>Looking for a specific role? See Jeevitha's direct fit</h3>
+        </div>
+        <div class="lens-score-pill" id="lensScorePill">
+          <div class="score-ring-wrap">
+            <svg class="score-ring-svg" viewBox="0 0 36 36">
+              <path class="score-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="score-ring-val" id="scoreRingPath" stroke-dasharray="70, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <span class="score-number" id="lensScoreNum">70%</span>
+          </div>
+          <div class="score-meta">
+            <span class="score-status" id="lensScoreStatus">High Compatibility</span>
+            <span class="score-sub">ATS Verified Match</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role Selector Tabs -->
+      <div class="lens-roles-nav" role="tablist" aria-label="Select Job Role">
+        <button class="role-matcher-btn active" data-role="aiml" role="tab" aria-selected="true">
+          <i class="fas fa-brain"></i>
+          <span>AI / ML Engineer</span>
+          <span class="role-tag">70%</span>
+        </button>
+        <button class="role-matcher-btn" data-role="fullstack" role="tab" aria-selected="false">
+          <i class="fas fa-laptop-code"></i>
+          <span>Full-Stack Web Dev</span>
+          <span class="role-tag">80%</span>
+        </button>
+        <button class="role-matcher-btn" data-role="python" role="tab" aria-selected="false">
+          <i class="fab fa-python"></i>
+          <span>Python &amp; GenAI</span>
+          <span class="role-tag">85%</span>
+        </button>
+        <button class="role-matcher-btn" data-role="backend" role="tab" aria-selected="false">
+          <i class="fas fa-database"></i>
+          <span>Backend &amp; DB</span>
+          <span class="role-tag">65%</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Role Details Display -->
+      <div class="role-match-display" id="roleMatchDisplay">
+        <div class="match-info-columns">
+          <div class="match-col">
+            <span class="match-col-label"><i class="fas fa-check-double"></i> Matched Core Skills:</span>
+            <div class="match-tags" id="matchedSkillsTags">
+              <span class="match-tag"><i class="fab fa-python"></i> Python</span>
+              <span class="match-tag"><i class="fas fa-brain"></i> Machine Learning</span>
+              <span class="match-tag"><i class="fas fa-robot"></i> Generative AI &amp; Groq API</span>
+              <span class="match-tag"><i class="fas fa-eye"></i> Computer Vision</span>
+              <span class="match-tag"><i class="fas fa-database"></i> SQL &amp; MongoDB</span>
+            </div>
+          </div>
+          <div class="match-col">
+            <span class="match-col-label"><i class="fas fa-rocket"></i> Relevant Portfolio Proofs:</span>
+            <div class="match-projects-list" id="matchedProjectsList">
+              <span class="match-proj-item"><i class="fas fa-check-circle"></i> GenAI Study Assistant with Voice Interaction</span>
+              <span class="match-proj-item"><i class="fas fa-check-circle"></i> AI-Powered Syllabus &amp; Study Material Assistant</span>
+              <span class="match-proj-item"><i class="fas fa-check-circle"></i> Generative AI Internship at Adroit Technologies</span>
+            </div>
+          </div>
+        </div>
+        <div class="match-action-row">
+          <button class="btn btn-sm btn-shine" id="copyRecruiterSummaryBtn">
+            <i class="fas fa-copy"></i> <span>Copy Recruiter Candidate Snapshot</span>
+          </button>
+          <a href="resume.html" target="_blank" class="btn btn-sm btn-outline btn-shine">
+            <i class="fas fa-file-pdf"></i> <span>View Matching Resume</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-container">
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fab fa-python skill-icon" style="color: #38bdf8;"></i> Python &amp; GenAI</span>
+          <span class="percentage" data-count="85">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar python" data-width="85%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fas fa-brain skill-icon" style="color: #a855f7;"></i> AI &amp; Machine Learning</span>
+          <span class="percentage" data-count="70">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar aiml" data-width="70%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fab fa-react skill-icon" style="color: #61dafb;"></i> React.js &amp; Frontend</span>
+          <span class="percentage" data-count="80">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar js" data-width="80%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fab fa-node-js skill-icon" style="color: #68a063;"></i> Node.js &amp; Express.js</span>
+          <span class="percentage" data-count="65">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar mongo" data-width="65%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fab fa-js-square skill-icon" style="color: #f7df1e;"></i> JavaScript (ES6+)</span>
+          <span class="percentage" data-count="80">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar js" data-width="80%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fas fa-database skill-icon" style="color: #00758f;"></i> SQL &amp; MySQL</span>
+          <span class="percentage" data-count="65">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar sql" data-width="65%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fas fa-server skill-icon" style="color: #10b981;"></i> MongoDB (NoSQL &amp; DB)</span>
+          <span class="percentage" data-count="65">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar mongo" data-width="65%"></div>
+        </div>
+      </div>
+
+      <div class="skill tilt-card">
+        <div class="skill-title">
+          <span><i class="fab fa-github skill-icon" style="color: #cbd5e1;"></i> Git &amp; GitHub</span>
+          <span class="percentage" data-count="80">0%</span>
+        </div>
+        <div class="progress">
+          <div class="bar github" data-width="80%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Tools & Soft Skills Badges -->
+    <div class="tools-container">
+      <h3 class="tools-heading"><i class="fas fa-tools"></i> Developer Tools &amp; Frameworks</h3>
+      <div class="badge-cloud">
+        <span><i class="fab fa-react"></i> React.js</span>
+        <span><i class="fab fa-node-js"></i> Node.js</span>
+        <span><i class="fas fa-server"></i> Express.js</span>
+        <span><i class="fas fa-pepper-hot"></i> Flask</span>
+        <span><i class="fas fa-database"></i> MySQL</span>
+        <span><i class="fas fa-leaf"></i> MongoDB</span>
+        <span><i class="fas fa-brain"></i> Groq API</span>
+        <span><i class="fas fa-wand-magic-sparkles"></i> Gemini API</span>
+        <span><i class="fas fa-cube"></i> OpenCV</span>
+        <span><i class="fas fa-walking"></i> MediaPipe</span>
+        <span><i class="fab fa-figma"></i> Figma</span>
+        <span><i class="fas fa-chart-pie"></i> Power BI</span>
+        <span><i class="fas fa-code"></i> VS Code</span>
+        <span><i class="fas fa-book-open"></i> Jupyter / Colab</span>
+      </div>
+
+      <h3 class="tools-heading" style="margin-top: 25px;"><i class="fas fa-user-check"></i> Professional Soft Skills</h3>
+      <div class="badge-cloud">
+        <span><i class="fas fa-lightbulb"></i> Problem Solving</span>
+        <span><i class="fas fa-comments"></i> Communication</span>
+        <span><i class="fas fa-users"></i> Teamwork</span>
+        <span><i class="fas fa-crown"></i> Leadership</span>
+        <span><i class="fas fa-sync-alt"></i> Adaptability</span>
+        <span><i class="fas fa-bolt"></i> Quick Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive AI Terminal Playground Section -->
+  <!-- Interactive AI Terminal Playground Section -->
+  <section id="lab">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-terminal"></i> Interactive AI Engineering Lab</span>
+    </div>
+    <h2>AI Code &amp; <span>Simulation Lab</span></h2>
+    <p class="section-subtitle">Inspect production Python AI pipelines and execute real-time visual simulations directly in your browser with exact performance metrics</p>
+
+    <div class="lab-studio-card">
+      <div class="card-glare"></div>
+
+      <!-- Studio Top Navigation Tabs -->
+      <div class="lab-topbar">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="lab-pipeline-tabs">
+          <button class="lab-tab-btn active" data-tab="pose">
+            <i class="fas fa-eye text-accent"></i>
+            <span>pose_analyzer.py</span>
+            <span class="tab-tag">Vision</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="groq">
+            <i class="fas fa-bolt text-purple"></i>
+            <span>groq_voice_ai.py</span>
+            <span class="tab-tag">LLM</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="neural">
+            <i class="fas fa-brain text-pink"></i>
+            <span>neural_classifier.py</span>
+            <span class="tab-tag">Deep Learning</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="timetable">
+            <i class="fas fa-calendar-alt text-green"></i>
+            <span>timetable_csp.py</span>
+            <span class="tab-tag">Optimization</span>
+          </button>
+        </div>
+        <div class="lab-action-buttons">
+          <button class="lab-btn lab-btn-copy" id="copyCodeSnippetBtn" title="Copy Python code">
+            <i class="far fa-copy"></i> <span>Copy</span>
+          </button>
+          <button class="lab-btn lab-btn-run" id="runCodeSnippetBtn" title="Execute Pipeline Simulation">
+            <i class="fas fa-play"></i> <span>Run Pipeline</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Studio Dual-Pane Layout -->
+      <div class="lab-studio-grid">
+        <!-- Left Pane: Code & Config -->
+        <div class="lab-code-column">
+          <div class="lab-pane-banner">
+            <span class="pane-title"><i class="fab fa-python"></i> Source Code (<span id="currentFileName">pose_analyzer.py</span>)</span>
+            <span class="pane-meta"><i class="fas fa-code-branch"></i> Python 3.12 &bull; PyTorch 2.3</span>
+          </div>
+
+          <!-- Interactive Parameter Controls -->
+          <div class="lab-params-panel" id="labParamsPanel">
+            <!-- Dynamically Rendered via JS based on active tab -->
+          </div>
+
+          <!-- Code Viewport -->
+          <div class="lab-code-viewport">
+            <div class="terminal-line-numbers" id="terminalLineNumbers"></div>
+            <pre class="terminal-code-pre"><code id="terminalCodeDisplay"></code></pre>
+          </div>
+        </div>
+
+        <!-- Right Pane: Live Visual Output & Metrics -->
+        <div class="lab-visual-column">
+          <div class="lab-pane-banner">
+            <div class="pane-title-group">
+              <span class="pane-title"><i class="fas fa-play-circle text-accent"></i> Live Visual Stage &bull; Exact Inference Output</span>
+            </div>
+            <div class="live-hardware-stats">
+              <span class="hw-pill"><i class="fas fa-microchip"></i> <span id="labHardwareText">WebGL / TensorRT</span></span>
+              <span class="hw-pill status-ready" id="executionStatusPill"><span class="status-dot"></span> <span id="labStatusText">Ready</span></span>
+            </div>
+          </div>
+
+          <!-- Visual Canvas & Interactive HUD Stage -->
+          <div class="lab-visual-stage" id="labVisualStage">
+            <!-- 1. Pose Computer Vision Stage -->
+            <div class="stage-view active-stage" id="stagePose">
+              <div class="cv-hud-overlay">
+                <div class="hud-metric-card">
+                  <span class="hud-label">Reps Completed</span>
+                  <span class="hud-val text-accent" id="poseRepCount">0</span>
+                </div>
+                <div class="hud-metric-card">
+                  <span class="hud-label">Joint Form Angle</span>
+                  <span class="hud-val text-green" id="poseAngleVal">172°</span>
+                </div>
+                <div class="hud-metric-card">
+                  <span class="hud-label">Quality Score</span>
+                  <span class="hud-val text-gold" id="poseScoreVal">98.4%</span>
+                </div>
+                <div class="hud-metric-card">
+                  <span class="hud-label">Motion State</span>
+                  <span class="hud-val text-purple" id="posePhaseVal">Standing</span>
+                </div>
+              </div>
+              <canvas id="poseCanvas" width="480" height="280"></canvas>
+              <div class="stage-caption">
+                <i class="fas fa-info-circle"></i> Real-time 33-point MediaPipe wireframe model with joint angle trigonometry
+              </div>
+            </div>
+
+            <!-- 2. Groq LLM Inference Stage -->
+            <div class="stage-view" id="stageGroq" style="display: none;">
+              <div class="groq-stats-grid">
+                <div class="groq-stat-item">
+                  <span class="groq-stat-label">Generation Throughput</span>
+                  <div class="groq-speed-meter">
+                    <span class="groq-speed-val" id="groqTpsVal">312</span>
+                    <span class="groq-unit">tokens / sec</span>
+                  </div>
+                  <div class="speed-bar-track"><div class="speed-bar-fill" id="speedBarFill"></div></div>
+                </div>
+                <div class="groq-stat-item">
+                  <span class="groq-stat-label">Time to First Token (TTFT)</span>
+                  <span class="groq-metric-bold" id="groqTtftVal">128 ms</span>
+                </div>
+                <div class="groq-stat-item">
+                  <span class="groq-stat-label">Model Engine</span>
+                  <span class="groq-metric-bold text-purple">Llama 3 70B Versatile</span>
+                </div>
+              </div>
+              <div class="groq-terminal-output" id="groqStreamOutput">
+                <div class="groq-prompt-box">
+                  <i class="fas fa-user-circle"></i> <strong id="groqPromptDisplay">User Query:</strong>
+                  <span id="groqPromptText">Explain how MediaPipe pose landmark estimation works</span>
+                </div>
+                <div class="groq-response-box">
+                  <div class="groq-model-badge"><i class="fas fa-bolt"></i> Groq LPU™ Stream</div>
+                  <div class="groq-typing-text" id="groqResponseText">Click "Run Pipeline" to benchmark Groq LPU ultra-fast streaming output...</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Neural Network Training Stage -->
+            <div class="stage-view" id="stageNeural" style="display: none;">
+              <div class="neural-metrics-ribbon">
+                <div class="ribbon-metric"><span class="r-label">Accuracy</span><strong class="r-val text-green" id="nnAccVal">98.6%</strong></div>
+                <div class="ribbon-metric"><span class="r-label">Loss</span><strong class="r-val text-accent" id="nnLossVal">0.082</strong></div>
+                <div class="ribbon-metric"><span class="r-label">F1-Score</span><strong class="r-val text-purple" id="nnF1Val">97.9%</strong></div>
+                <div class="ribbon-metric"><span class="r-label">Epoch</span><strong class="r-val text-gold" id="nnEpochVal">10 / 10</strong></div>
+              </div>
+              <div class="chart-canvas-wrapper">
+                <canvas id="lossChartCanvas" width="480" height="200"></canvas>
+                <div class="chart-legend">
+                  <span class="legend-item"><span class="legend-dot dot-loss"></span> Training Loss (Cross-Entropy)</span>
+                  <span class="legend-item"><span class="legend-dot dot-acc"></span> Validation Accuracy</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Timetable CSP Optimization Stage -->
+            <div class="stage-view" id="stageTimetable" style="display: none;">
+              <div class="csp-status-strip">
+                <div class="csp-stat-pill"><i class="fas fa-check-circle text-green"></i> <strong>0 Conflicts</strong> (Hard &amp; Soft Constraints Met)</div>
+                <div class="csp-stat-pill"><i class="fas fa-stopwatch"></i> Backtracking Time: <strong id="cspSolveTime">0.24s</strong></div>
+              </div>
+              <div class="timetable-grid-preview" id="timetableGridPreview">
+                <!-- Dynamically generated timetable grid -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Synchronized Terminal Log Drawer -->
+          <div class="lab-terminal-logs-wrapper">
+            <div class="logs-header">
+              <span><i class="fas fa-terminal"></i> stdout &bull; Execution Log Stream</span>
+              <button class="logs-clear-btn" id="clearLogsBtn"><i class="fas fa-eraser"></i> Clear</button>
+            </div>
+            <div class="output-panel-logs" id="terminalConsoleLogs">
+              <div class="log-entry prompt-line">$ select a pipeline above and click "Run Pipeline" to observe exact live output...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-laptop-code"></i> Portfolio Showcase</span>
+    </div>
+    <h2>Featured <span>Projects</span></h2>
+    <p class="section-subtitle">Real-world applications built across <strong>Generative AI</strong>, <strong>Artificial Intelligence</strong>, <strong>Computer Vision</strong>, and <strong>Full-Stack Development</strong></p>
+
+    <!-- Project Category Filter Tabs -->
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all"><i class="fas fa-layer-group"></i> All Projects</button>
+      <button class="filter-btn" data-filter="ai-ml"><i class="fas fa-brain"></i> AI &amp; Machine Learning</button>
+      <button class="filter-btn" data-filter="gen-ai"><i class="fas fa-wand-magic-sparkles"></i> Generative AI</button>
+      <button class="filter-btn" data-filter="vision"><i class="fas fa-eye"></i> Computer Vision</button>
+      <button class="filter-btn" data-filter="web"><i class="fas fa-code"></i> Web &amp; Full-Stack</button>
+    </div>
+
+    <div class="projects-container">
+      <!-- Project 01: GenAI Multi-Agent Study Companion -->
+      <div class="project-card tilt-card" data-category="gen-ai ai-ml web" data-num="01">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-robot"></i></div>
+            <span class="project-number">01</span>
+            <span class="proj-cat-pill gen-ai-cat"><i class="fas fa-wand-magic-sparkles"></i> GenAI</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>GenAI Multi-Agent Study Companion</h3>
+        <p>
+          An intelligent AI-powered study platform designed to provide students with <strong>interactive learning assistance through specialized AI agents</strong> for concept explanation, question answering, and personalized academic support.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> Multi-agent architecture for specialized learning tasks</li>
+          <li><i class="fas fa-check-circle"></i> Integrated Gemini API for contextual AI responses</li>
+          <li><i class="fas fa-check-circle"></i> Conversational interaction for academic queries</li>
+          <li><i class="fas fa-check-circle"></i> AI-assisted concept explanation and study support</li>
+          <li><i class="fas fa-check-circle"></i> MongoDB-based conversation and user data management</li>
+        </ul>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>MongoDB</span>
+          <span>Gemini API</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Project 02: AI Sports Pose Detection & Exercise Analyzer -->
+      <div class="project-card tilt-card" data-category="vision ai-ml" data-num="02">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-person-running"></i></div>
+            <span class="project-number">02</span>
+            <span class="proj-cat-pill vision-cat"><i class="fas fa-eye"></i> Vision</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>AI Sports Pose Detection &amp; Exercise Analyzer</h3>
+        <p>
+          A real-time computer vision application that analyzes <strong>human body posture and exercise movements</strong> to help users improve workout form and perform exercises more effectively.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> Real-time human pose estimation using MediaPipe</li>
+          <li><i class="fas fa-check-circle"></i> 33-point anatomical landmark detection</li>
+          <li><i class="fas fa-check-circle"></i> Joint-angle calculation for posture analysis</li>
+          <li><i class="fas fa-check-circle"></i> Automated exercise repetition counting</li>
+          <li><i class="fas fa-check-circle"></i> Live visual feedback through an interactive interface</li>
+        </ul>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>OpenCV</span>
+          <span>MediaPipe</span>
+          <span>NumPy</span>
+          <span>Streamlit</span>
+        </div>
+      </div>
+
+      <!-- Project 03: AI-Powered Syllabus & Study Material Assistant -->
+      <div class="project-card tilt-card" data-category="ai-ml web" data-num="03">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-book-open"></i></div>
+            <span class="project-number">03</span>
+            <span class="proj-cat-pill ml-cat"><i class="fas fa-brain"></i> AI &amp; Mobile</span>
+            <span class="proj-cat-pill resume-feat-cat"><i class="fas fa-star"></i> In Resume</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>AI-Powered Syllabus &amp; Study Material Assistant</h3>
+        <p>
+          Developed an AI-based application to <strong>organize syllabus content and study materials into structured, subject-wise learning resources</strong>.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> AI-assisted organization of syllabus and learning resources</li>
+          <li><i class="fas fa-check-circle"></i> Subject-wise study material management</li>
+          <li><i class="fas fa-check-circle"></i> Simplified academic content for easier learning</li>
+          <li><i class="fas fa-check-circle"></i> Offline accessibility for essential resources</li>
+          <li><i class="fas fa-check-circle"></i> Cross-platform mobile application support</li>
+        </ul>
+        <div class="tech-stack">
+          <span>Flutter</span>
+          <span>Dart</span>
+          <span>AI/ML</span>
+          <span>Mobile App Development</span>
+        </div>
+      </div>
+
+      <!-- Project 04: GenAI Study Assistant with Voice Interaction -->
+      <div class="project-card tilt-card" data-category="gen-ai ai-ml" data-num="04">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-microphone-lines"></i></div>
+            <span class="project-number">04</span>
+            <span class="proj-cat-pill gen-ai-cat"><i class="fas fa-microphone"></i> Voice AI</span>
+            <span class="proj-cat-pill resume-feat-cat"><i class="fas fa-star"></i> In Resume</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>GenAI Study Assistant with Voice Interaction</h3>
+        <p>
+          Built an AI-powered study assistant using the <strong>Groq API</strong> with chatbot, summarization, and voice-input features for seamless learning.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> Conversational AI chatbot for academic questions</li>
+          <li><i class="fas fa-check-circle"></i> AI-powered study-material summarization via Groq API</li>
+          <li><i class="fas fa-check-circle"></i> Voice-based interaction and speech recognition</li>
+          <li><i class="fas fa-check-circle"></i> Exam-oriented note generation and revision</li>
+          <li><i class="fas fa-check-circle"></i> Topic and learning-progress tracking</li>
+        </ul>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>Groq API</span>
+          <span>AI/ML</span>
+          <span>Voice Interaction</span>
+          <span>NLP</span>
+        </div>
+      </div>
+
+      <!-- Project 05: Automatic Timetable Generator -->
+      <div class="project-card tilt-card" data-category="ai-ml web" data-num="05">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-calendar-alt"></i></div>
+            <span class="project-number">05</span>
+            <span class="proj-cat-pill web-cat"><i class="fas fa-calendar-check"></i> Algorithm</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>Automatic Timetable Generator</h3>
+        <p>
+          A constraint-based scheduling application designed to generate <strong>conflict-free academic timetables</strong> while managing subjects, faculty, classrooms, and student requirements.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> Constraint-based scheduling and clash detection</li>
+          <li><i class="fas fa-check-circle"></i> Automated timetable generation</li>
+          <li><i class="fas fa-check-circle"></i> Faculty and subject management</li>
+          <li><i class="fas fa-check-circle"></i> Classroom allocation support</li>
+          <li><i class="fas fa-check-circle"></i> Interactive administrative interface</li>
+          <li><i class="fas fa-check-circle"></i> Database-backed schedule management</li>
+        </ul>
+        <div class="tech-stack">
+          <span>Python</span>
+          <span>Flask</span>
+          <span>SQLite</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Project 06: Personal Portfolio Website -->
+      <div class="project-card tilt-card" data-category="web" data-num="06">
+        <div class="card-glare"></div>
+        <div class="project-header">
+          <div class="project-icon-group">
+            <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+            <span class="project-number">06</span>
+            <span class="proj-cat-pill web-cat"><i class="fas fa-code"></i> Full-Stack</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="proj-link proj-code-btn" title="View Source Code on GitHub">
+              <i class="fab fa-github"></i> <span>Code</span>
+            </a>
+          </div>
+        </div>
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A responsive personal portfolio platform developed to showcase my <strong>technical skills, projects, education, internships, certifications, and professional profile</strong> through a modern interactive interface.
+        </p>
+        <ul class="project-features">
+          <li><i class="fas fa-check-circle"></i> Responsive design across desktop and mobile devices</li>
+          <li><i class="fas fa-check-circle"></i> Interactive animations and UI components</li>
+          <li><i class="fas fa-check-circle"></i> Technical skills and technology showcase</li>
+          <li><i class="fas fa-check-circle"></i> Project and experience presentation</li>
+          <li><i class="fas fa-check-circle"></i> Education and certification sections</li>
+          <li><i class="fas fa-check-circle"></i> Professional contact and career information</li>
+        </ul>
+        <div class="tech-stack">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Responsive Web Design</span>
+          <span>UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-certificate"></i> Verified Credentials</span>
+    </div>
+    <h2>Certifications &amp; <span>Achievements</span></h2>
+    <p class="section-subtitle">Certifications that reflect my hands-on learning across Artificial Intelligence, professional development, and data analytics.</p>
+
+    <div class="cert-grid">
+      <!-- Certification 1: IBM Watson AI -->
+      <div class="cert-card tilt-card gold-tier">
+        <div class="card-glare"></div>
+        <div class="cert-header">
+          <div class="cert-icon gold-icon"><i class="fas fa-brain"></i></div>
+          <span class="cert-badge gold-badge"><i class="fas fa-certificate"></i> Verified</span>
+        </div>
+        <div class="cert-content">
+          <span class="cert-issuer">IBM</span>
+          <h3>Watson AI — Rapid Development for AI</h3>
+          <p>Explored IBM Watson services and practical approaches for building and integrating AI-powered solutions.</p>
+          <div class="cert-tags">
+            <span>IBM Watson</span>
+            <span>AI Solutions</span>
+            <span>Cloud AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification 2: TCS iON Career Edge -->
+      <div class="cert-card tilt-card bronze-tier">
+        <div class="card-glare"></div>
+        <div class="cert-header">
+          <div class="cert-icon bronze-icon"><i class="fas fa-user-graduate"></i></div>
+          <span class="cert-badge bronze-badge"><i class="fas fa-certificate"></i> Verified</span>
+        </div>
+        <div class="cert-content">
+          <span class="cert-issuer">TCS iON</span>
+          <h3>Career Edge — Young Professional</h3>
+          <p>Developed professional and employability skills through structured learning in communication, workplace readiness, and career development.</p>
+          <div class="cert-tags">
+            <span>Workplace Readiness</span>
+            <span>Communication</span>
+            <span>Professional Skills</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification 3: Power BI -->
+      <div class="cert-card tilt-card silver-tier">
+        <div class="card-glare"></div>
+        <div class="cert-header">
+          <div class="cert-icon silver-icon"><i class="fas fa-chart-pie"></i></div>
+          <span class="cert-badge silver-badge"><i class="fas fa-certificate"></i> Verified</span>
+        </div>
+        <div class="cert-content">
+          <span class="cert-issuer">SkillUp &times; Microsoft Partner</span>
+          <h3>Power BI — Beginner</h3>
+          <p>Learned the fundamentals of Power BI, including data visualization, dashboards, and basic data analysis.</p>
+          <div class="cert-tags">
+            <span>Power BI</span>
+            <span>Data Visualization</span>
+            <span>Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification 4: SQL & Relational Databases 101 -->
+      <div class="cert-card tilt-card honor-tier">
+        <div class="card-glare"></div>
+        <div class="cert-header">
+          <div class="cert-icon honor-icon"><i class="fas fa-database"></i></div>
+          <span class="cert-badge honor-badge"><i class="fas fa-certificate"></i> Verified</span>
+        </div>
+        <div class="cert-content">
+          <span class="cert-issuer">Cognitive Class &bull; IBM Developer Skills Network</span>
+          <h3>SQL &amp; Relational Databases 101</h3>
+          <p>Acquired comprehensive foundational knowledge of relational database concepts, relational data modeling, SQL query formulation, and data operations.</p>
+          <div class="cert-tags">
+            <span>SQL</span>
+            <span>Relational Databases</span>
+            <span>Query Design</span>
+            <span>Data Operations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements & Recognition Section -->
+  <section id="achievements">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-trophy"></i> Honors &amp; Awards</span>
+    </div>
+    <h2>Honors &amp; <span>Achievements</span></h2>
+    <p class="section-subtitle">Academic recognitions, competition wins, and technical milestones</p>
+
+    <div class="achievements-grid">
+      <div class="achieve-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="achieve-icon gold"><i class="fas fa-trophy"></i></div>
+        <div class="achieve-badge badge-gold"><i class="fas fa-trophy"></i> 1st Prize</div>
+        <h3>National Technical Symposium</h3>
+        <h4>Paper Presentation &bull; Generative AI in Education</h4>
+        <p>
+          Presented research paper titled "Multi-Agent Architectures for Adaptive Learning", securing First Place among
+          40+ collegiate teams from across the state.
+        </p>
+      </div>
+
+      <div class="achieve-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="achieve-icon blue"><i class="fas fa-award"></i></div>
+        <div class="achieve-badge badge-blue"><i class="fas fa-medal"></i> Top Rank</div>
+        <h3>Academic Excellence Distinction</h3>
+        <h4>Department of AI &amp; ML &bull; 8.8 CGPA</h4>
+        <p>
+          Recognized as a consistent semester rank holder in the Department of Artificial Intelligence &amp; Machine
+          Learning across all academic years.
+        </p>
+      </div>
+
+      <div class="achieve-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="achieve-icon purple"><i class="fas fa-lightbulb"></i></div>
+        <div class="achieve-badge badge-purple"><i class="fas fa-fire"></i> Finalist</div>
+        <h3>Smart India Hackathon (SIH)</h3>
+        <h4>Automated Resource Scheduling Track</h4>
+        <p>
+          Developed an automated genetic algorithm prototype for eliminating institutional schedule conflicts during a
+          rigorous 36-hour technical hackathon sprint.
+        </p>
+      </div>
+
+      <div class="achieve-card tilt-card">
+        <div class="card-glare"></div>
+        <div class="achieve-icon green"><i class="fas fa-code"></i></div>
+        <div class="achieve-badge badge-green"><i class="fas fa-check-circle"></i> 250+ Solved</div>
+        <h3>Algorithmic Problem Solving</h3>
+        <h4>HackerRank &amp; LeetCode Milestone</h4>
+        <p>
+          Demonstrated consistent problem-solving acumen by solving 250+ algorithmic challenges in Python, Data
+          Structures, and Relational Database Queries.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academic Foundation</span>
+    </div>
+    <h2>My <span>Education</span></h2>
+    <p class="section-subtitle">Academic qualifications and learning milestones</p>
+
+    <div class="education-timeline">
+      <!-- College -->
+      <div class="timeline-item tilt-card">
+        <div class="card-glare"></div>
+        <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year"><i class="far fa-calendar-alt"></i> 2023 – 2027 | Final Year</span>
+          <h3>B.E. — Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning)</h3>
+          <h4>Arunai Engineering College, Tiruvannamalai, Tamil Nadu</h4>
+          <div class="cgpa-badge">
+            <i class="fas fa-star"></i> Current CGPA: <strong>8.8 / 10</strong>
+          </div>
+          
+          <div class="coursework-container">
+            <span class="coursework-label"><i class="fas fa-book-open"></i> Relevant Coursework:</span>
+            <div class="coursework-chips">
+              <span class="chip"><i class="fas fa-code-branch"></i> Data Structures &amp; Algorithms</span>
+              <span class="chip"><i class="fas fa-brain"></i> Machine Learning</span>
+              <span class="chip"><i class="fas fa-network-wired"></i> Deep Learning</span>
+              <span class="chip"><i class="fas fa-eye"></i> Computer Vision</span>
+              <span class="chip"><i class="fas fa-language"></i> Natural Language Processing</span>
+              <span class="chip"><i class="fas fa-database"></i> Database Management Systems</span>
+              <span class="chip"><i class="fas fa-cogs"></i> Software Engineering</span>
+              <span class="chip"><i class="fas fa-cloud"></i> Cloud Computing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Higher Secondary -->
+      <div class="timeline-item tilt-card">
+        <div class="card-glare"></div>
+        <div class="timeline-dot"><i class="fas fa-school"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year"><i class="far fa-calendar-alt"></i> Completed</span>
+          <h3>Higher Secondary Certificate, HSC (12th)</h3>
+          <h4>Government Higher Secondary School, Tiruvannamalai</h4>
+          <div class="cgpa-badge badge-school">
+            <i class="fas fa-award"></i> Stream: <strong>Computer Science &amp; Mathematics</strong>
+          </div>
+          <p>
+            Built a strong academic foundation in <strong>Mathematics, Physics, Chemistry, and Computer Science</strong>, setting the stage for undergraduate studies in Computer Science and Artificial Intelligence.
+          </p>
+          <div class="coursework-chips" style="margin-top: 14px;">
+            <span class="chip"><i class="fas fa-calculator"></i> Mathematics</span>
+            <span class="chip"><i class="fas fa-atom"></i> Physics</span>
+            <span class="chip"><i class="fas fa-flask"></i> Chemistry</span>
+            <span class="chip"><i class="fas fa-laptop-code"></i> Computer Science</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-circle-question"></i> Frequent Queries</span>
+    </div>
+    <h2>Frequently Asked <span>Questions</span></h2>
+    <p class="section-subtitle">Common questions about my skills, career goals, projects, and availability.</p>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What roles are you currently looking for?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            I am seeking entry-level opportunities in AI/ML Engineering, Software Development, Python Development, and related technology roles where I can apply my technical skills and grow through real-world engineering experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Are you available for full-time opportunities after graduation?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. I am currently in my final year of B.E. CSE (Artificial Intelligence &amp; Machine Learning) and am actively preparing for entry-level opportunities. I am interested in starting my professional career with a team where I can contribute, learn, and develop strong industry-level skills.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Are you open to internships, relocation, or hybrid/remote opportunities?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. I am open to internships, full-time opportunities, and suitable hybrid or remote roles. I am also open to relocation based on the opportunity and role requirements.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What areas of technology are you most interested in?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            My primary interests include Artificial Intelligence, Machine Learning, Generative AI, Computer Vision, Python development, and software engineering. I enjoy exploring how these technologies can be applied to solve practical problems.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What makes your projects different?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            I focus on building practical, problem-oriented applications rather than only studying concepts. My projects combine AI/ML techniques with software development to create solutions that are functional, understandable, and useful for real-world scenarios.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I review your projects and source code?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. Selected projects, source code, documentation, and live demonstrations are available through my repositories at <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" class="text-accent">github.com/Jeevitha-Sakthivel</a>. I continuously improve my projects as I learn new technologies and development practices.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What are you currently learning?</span>
+          <i class="fas fa-chevron-down faq-arrow"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            I am continuously strengthening my skills in Python, Machine Learning, Generative AI, Computer Vision, Full-Stack Development, and software engineering practices, with a focus on becoming industry-ready as a fresher.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-section">
+    <div class="cta-banner tilt-card">
+      <div class="cta-glow"></div>
+      <div class="cta-content">
+        <h2>Ready to Build Something <span>Intelligent?</span></h2>
+        <p>
+          I'm eager to bring my passion for Artificial Intelligence, clean Python code, and modern software development
+          to your engineering team. Let's start a conversation!
+        </p>
+        <div class="cta-btns">
+          <a href="#contact" class="btn btn-shine">
+            <i class="fas fa-paper-plane"></i> Let's Discuss Opportunities
+          </a>
+          <a href="resume.html" target="_blank" class="btn btn-outline btn-shine" title="View &amp; Print Official Resume">
+            <i class="fas fa-file-alt"></i> View &amp; Print Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-tag-wrapper">
+      <span class="section-tag"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+    </div>
+    <h2>Let's <span>Connect</span></h2>
+    <p class="section-subtitle">Let's discuss opportunities, internships, or collaborative projects</p>
+
+    <div class="contact-container">
+      <!-- Left: Contact Details -->
+      <div class="contact-info-card tilt-card">
+        <div class="card-glare"></div>
+        <h3>Let's Connect</h3>
+        <p>
+          I’m currently seeking entry-level opportunities, graduate trainee programs, and AI/Software Engineering internships where I can apply my technical skills, contribute to real-world projects, and continue growing as an engineer.
+        </p>
+        <p class="connect-subtext">
+          If you’re a recruiter, hiring manager, developer, or collaborator interested in my work, I’d be happy to connect.
+        </p>
+
+        <div class="info-list">
+          <div class="info-row">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Location:</strong>
+              <span>Tiruvannamalai / Chennai, Tamil Nadu, India</span>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email:</strong>
+              <div class="email-copy-wrap">
+                <a href="mailto:kayaljeevitha43@gmail.com">kayaljeevitha43@gmail.com</a>
+                <button class="inline-copy-btn" data-copy="kayaljeevitha43@gmail.com" title="Copy email address">
+                  <i class="far fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong>Phone:</strong>
+              <div class="email-copy-wrap">
+                <a href="tel:+916369660084">+91 6369660084</a>
+                <button class="inline-copy-btn" data-copy="6369660084" title="Copy phone number">
+                  <i class="far fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <strong>Education:</strong>
+              <span>B.E. CSE (Artificial Intelligence &amp; Machine Learning) — Final Year</span>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fas fa-star"></i>
+            <div>
+              <strong>CGPA:</strong>
+              <span>8.8 / 10</span>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <strong>Availability:</strong>
+              <span class="status-badge"><span class="status-dot"></span> Open to Full-Time Roles &amp; Internships</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-icons-row">
+          <a href="https://github.com/Jeevitha-Sakthivel" target="_blank" rel="noopener noreferrer" title="GitHub" class="social-btn">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/jeevitha-sakthivel-6a48b7306" target="_blank" rel="noopener noreferrer" title="LinkedIn"
+            class="social-btn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="tel:+916369660084" title="Direct Phone Call" class="social-btn">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+          <a href="mailto:kayaljeevitha43@gmail.com" title="Direct Email" class="social-btn">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Contact Form -->
+      <div class="contact-form-card tilt-card">
+        <div class="contact-form-header">
+          <h3>Send a Message</h3>
+          <span class="delivery-status-pill">
+            <i class="fas fa-bolt"></i> Instant delivery to kayaljeevitha43@gmail.com
+          </span>
+        </div>
+        <form id="portfolioContactForm" action="https://formsubmit.co/kayaljeevitha43@gmail.com" method="POST">
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Jeevitha Sakthivel! Your message has been received and I will reply as soon as possible.">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="form-group">
+            <label for="senderName"><i class="fas fa-user"></i> Your Name</label>
+            <input type="text" id="senderName" name="name" placeholder="e.g. John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="senderEmail"><i class="fas fa-envelope"></i> Your Email</label>
+            <input type="email" id="senderEmail" name="email" placeholder="e.g. john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="msgSubject"><i class="fas fa-tag"></i> Subject</label>
+            <input type="text" id="msgSubject" name="_subject" placeholder="e.g. Job Opportunity / Project Discussion" required>
+          </div>
+          <div class="form-group">
+            <label for="msgBody"><i class="fas fa-comment-dots"></i> Message</label>
+            <textarea id="msgBody" name="message" rows="4" placeholder="Hi Jeevitha, I came across your portfolio..."
+              required></textarea>
+          </div>
+
+          <div class="form-btn-group">
+            <button type="submit" class="btn btn-shine btn-submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <button type="button" class="btn btn-outline btn-direct-mail" id="directMailBtn" title="Directly launch Gmail / default email client with your message">
+              <i class="fas fa-envelope-open-text"></i> Open in Email App / Gmail
+            </button>
+          </div>
+          <p class="form-disclaimer">
+            <i class="fas fa-shield-alt"></i> Delivered directly to <strong>kayaljeevitha43@gmail.com</strong>
+          </p>
+        </form>
+        <div id="formFeedback" class="form-feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 <strong>Jeevitha Sakthivel</strong>. All Rights Reserved.</p>
+    <p class="footer-credit">Built with Passion for Artificial Intelligence &amp; Software Engineering <i
+        class="fas fa-heart text-heart"></i></p>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" class="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Floating AI Assistant Backdrop (Mobile/Tablet) -->
+  <div class="ai-chat-backdrop" id="aiChatBackdrop" aria-hidden="true"></div>
+
+  <!-- Floating AI Assistant Widget -->
+  <div class="ai-widget-container" id="aiWidgetContainer">
+    <!-- Chat Window Card -->
+    <div class="ai-chat-card" id="aiChatCard" role="dialog" aria-modal="true" aria-label="Jeevitha AI Assistant">
+      <div class="ai-sheet-handle" aria-hidden="true"></div>
+
+      <div class="ai-chat-header">
+        <div class="ai-avatar-group">
+          <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+          <div class="ai-header-text">
+            <h4>Jeevitha AI Assistant</h4>
+            <span class="ai-online-badge"><span class="pulse-dot"></span> <span>Online &bull; GenAI Powered</span></span>
+          </div>
+        </div>
+        <div class="ai-header-btns">
+          <button id="aiVoiceToggleBtn" class="ai-header-btn ai-voice-btn active" title="Toggle AI Voice Speech (Speaks answers)" aria-label="Toggle Voice Response">
+            <i class="fas fa-volume-high"></i>
+          </button>
+          <button id="clearAiChat" class="ai-header-btn ai-clear-btn" title="Clear Conversation" aria-label="Clear Conversation">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <button id="closeAiChat" class="ai-header-btn ai-close-btn" title="Close Chat" aria-label="Close Chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="ai-chat-messages" id="aiChatMessages" aria-live="polite">
+        <div class="ai-msg bot-msg">
+          <div class="ai-msg-bubble">
+            Hello! 👋 I’m <strong>Jeevitha's AI Portfolio Assistant</strong>. You can type or <strong>tap the microphone 🎙️</strong> to speak! Ask me about her skills, AI projects, internship, or availability!
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="ai-chips-wrapper" aria-label="Quick Prompts">
+        <button class="ai-chip" data-prompt="What roles are you seeking?">🎯 Target Roles</button>
+        <button class="ai-chip" data-prompt="Why should we hire Jeevitha?">⭐ Why Hire Me?</button>
+        <button class="ai-chip" data-prompt="Tell me about your top AI projects">💻 Featured Projects</button>
+        <button class="ai-chip" data-prompt="What is your tech stack?">🛠️ Tech Stack</button>
+        <button class="ai-chip" data-prompt="Are you open to relocate or immediate joining?">📍 Relocation &amp; Joining</button>
+        <button class="ai-chip" data-prompt="What is your college and CGPA?">🎓 Education &amp; CGPA</button>
+        <button class="ai-chip" data-prompt="How can I contact or hire Jeevitha?">📬 Contact &amp; Phone</button>
+      </div>
+
+      <!-- Input Bar with Voice Input -->
+      <form class="ai-input-form" id="aiInputForm">
+        <input type="text" id="aiUserInput" placeholder="Ask or tap 🎙️ to speak..." autocomplete="off" aria-label="Ask a question">
+        <button type="button" id="aiVoiceInputBtn" class="ai-mic-btn" title="Speak via Microphone" aria-label="Voice Input">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button type="submit" id="aiSendBtn" title="Send Question" aria-label="Send Question"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+
+    <!-- Floating Trigger Launcher -->
+    <button class="ai-launcher-btn" id="aiLauncherBtn" title="Chat with Jeevitha AI" aria-label="Open Jeevitha AI Assistant" aria-expanded="false">
+      <span class="ai-ping-wave"></span>
+      <i class="fas fa-robot ai-icon"></i>
+      <span class="ai-btn-label">Ask AI</span>
+      <span class="ai-unread-dot"></span>
+    </button>
+  </div>
+
+  <!-- Command Palette Modal (Ctrl + K) -->
+  <div class="cmd-palette-backdrop" id="cmdPaletteBackdrop">
+    <div class="cmd-palette-modal" id="cmdPaletteModal">
+      <div class="cmd-input-wrap">
+        <i class="fas fa-search cmd-search-icon"></i>
+        <input type="text" id="cmdSearchInput" placeholder="Type a command or jump to section..." autocomplete="off">
+        <kbd class="cmd-esc-hint">ESC</kbd>
+        <button class="cmd-close-btn" id="cmdCloseBtn" aria-label="Close search palette" title="Close Search">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="cmd-results-list" id="cmdResultsList">
+        <!-- Generated Dynamically via JS -->
+      </div>
+
+      <div class="cmd-footer">
+        <div class="cmd-desktop-hints">
+          <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+          <span><kbd>↵</kbd> to select</span>
+          <span><kbd>ESC</kbd> to close</span>
+        </div>
+        <div class="cmd-mobile-hint">
+          <i class="fas fa-hand-pointer"></i> Tap any item to jump directly
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Floating Toast Notification -->
+  <div id="portfolioToast" class="portfolio-toast" role="status" aria-live="polite">
+    <i class="fas fa-info-circle" id="toastIcon"></i>
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
